@@ -129,10 +129,14 @@ namespace Grepe.Graph {
         {
             foreach(KeyValuePair<K, List<Edge<K, T>>> entry in adjacencyList)
             {
+                Console.WriteLine($"Adjacency list of vertex {entry.Key}");
+                Console.Write("head ");
                 foreach(var edge in entry.Value)
                 {
-                    Console.WriteLine($"{edge.Source} ---> {edge.Destination} (weight {edge.Weight})");
+                    Console.Write($"--> {edge.Destination.Key} .(weight {edge.Weight}). ");
                 }
+
+                Console.Write("\n");
             }
         }
 
@@ -154,9 +158,7 @@ namespace Grepe.Graph {
             }
 
             var adjacency = this.adjacencyList[from];
-            adjacency.ForEach(e => {
-                action(e.Destination);
-            });
+            adjacency.ForEach(e => action(e.Destination));
         }
 
         // Dfs an implementation of Depth-first search

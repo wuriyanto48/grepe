@@ -73,6 +73,8 @@ namespace Grepe
         //     Console.WriteLine("-------------------------");
 
         //    g.Neighbors("003", n => {Console.WriteLine(n);});
+
+            Console.WriteLine(g.LengthNodes());
         }
     }
 }
